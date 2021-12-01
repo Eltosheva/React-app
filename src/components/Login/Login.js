@@ -1,3 +1,6 @@
+import React from 'react';
+import * as authService from '../../services/AuthService';
+
 const Login = () => {
 
     const onLogin = (e) => {
@@ -5,16 +8,27 @@ const Login = () => {
 
         let formData = new FormData(e.currentTarget);
 
-        console.log(formData.get('email'));
+        let email = formData.get('email');
+        let password = formData.get('password');
+        
+        authService.login(email, password)
+        .then((authData) => {
+            console.log("Logged");
+            console.log(authData);
+        })
+        .catch(err => {
+            // TODO: show notification
+            console.log(">?"+ err);
+        });
     }
 
     return(
-    <div class="login">
-        <section class="login-sec">
-            <form class="log-form" action="">
-                <label for="log-form-email"> Email: </label>
+    <div className="login">
+        <section className="login-sec">
+            <form className="log-form" onSubmit={onLogin} method="POST">
+                <label htmlFor="log-form-email"> Email: </label>
                 <input id="log-form-email" type="email" name="email"/>
-                <label for="log-form-pass">Password: </label>
+                <label htmlFor="log-form-pass">Password: </label>
                 <input id="log-form-pass" type="password" name="password"/>
                 <button type="submit"><b>Submit</b></button>
             </form>

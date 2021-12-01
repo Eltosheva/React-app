@@ -1,5 +1,6 @@
 
-import { Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
@@ -11,12 +12,13 @@ function App() {
     <div>
      <Header/>
      <main id="site-content">
-       <switch>
-         <Route path="/home" components={Home}></Route>
-         <Login/>
-         <Register/>
-         <Add/>
-       </switch>
+       <Routes>
+         <Route path="/home" element={<Home />} />
+         <Route path="/login" element={<Login onLogin={onLogin}/>} />
+         {/* <Route path="/logout" element={<Logout />} /> */}
+         <Route path="/register" element={<Register />} />
+         <Route path="/add" element={<Add />} />
+       </Routes>
        </main>
 
        <footer id="site-footer">

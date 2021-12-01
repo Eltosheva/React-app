@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Add = () => {
 return(
     <div class="add">
