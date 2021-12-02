@@ -1,9 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Header = () => {
-
+    const { user } = useContext(AuthContext);
     let userNavigation = (
         <div id='user'>
+            <p>Welcome, {user.email} </p>
             <li><a href='/add'>Add NEW</a></li>
             <li><a href='/logout'>Logout</a></li>
         </div>
@@ -21,8 +24,9 @@ return(
         <h2><a className="home" href='/home'>DeliSHesss</a></h2>
         <nav>
             <ul className="navigation">
-                {(userNavigation)}
-                {(guestNavigation)}
+                {user.email 
+                    ? userNavigation 
+                    : guestNavigation}
             </ul>
         </nav>
     </header>

@@ -1,9 +1,14 @@
 import React from 'react';
-import * as authService from '../../services/AuthService';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
+import * as authService from '../../services/authService';
 
 const Login = () => {
+    const {login} = useContext(AuthContext);
+    const navigate = useNavigate();
 
-    const onLogin = (e) => {
+    const onLoginHandler = (e) => {
         e.preventDefault();
 
         let formData = new FormData(e.currentTarget);
@@ -13,28 +18,28 @@ const Login = () => {
         
         authService.login(email, password)
         .then((authData) => {
-            console.log("Logged");
-            console.log(authData);
-        })
-        .catch(err => {
+            login(authData); 
+
+            navigate('/home');
+        })        .catch(err => {
             // TODO: show notification
-            console.log(">?"+ err);
+            console.log(err);
         });
     }
-
+    
     return(
-    <div className="login">
-        <section className="login-sec">
-            <form className="log-form" onSubmit={onLogin} method="POST">
-                <label htmlFor="log-form-email"> Email: </label>
-                <input id="log-form-email" type="email" name="email"/>
-                <label htmlFor="log-form-pass">Password: </label>
-                <input id="log-form-pass" type="password" name="password"/>
-                <button type="submit"><b>Submit</b></button>
-            </form>
-        </section>
-    </div>
-);
+        <div className="login">
+            <section className="login-sec">
+                <form className="log-form" onSubmit={onLoginHandler} method="POST">
+                    <label htmlFor="log-form-email"> Email: </label>
+                    <input id="log-form-email" type="email" name="email"/>
+                    <label htmlFor="log-form-pass">Password: </label>
+                    <input id="log-form-pass" type="password" name="password"/>
+                    <button type="submit"><b>Submit</b></button>
+                </form>
+            </section>
+        </div>
+    );
 
 }
 
