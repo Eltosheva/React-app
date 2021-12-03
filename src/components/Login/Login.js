@@ -16,8 +16,9 @@ const Login = () => {
         let email = formData.get('email');
         let password = formData.get('password');
         
-        authService.login(email, password)
-        .then((authData) => {
+        authService.login(email,password)
+        .then(
+            (authData) => {
             login(authData); 
 
             navigate('/home');
@@ -31,9 +32,9 @@ const Login = () => {
         <div className="login">
             <section className="login-sec">
                 <form className="log-form" onSubmit={onLoginHandler} method="POST">
-                    <label htmlFor="log-form-email"> Email: </label>
+                    <label htmlFor="log-form-email">Email:</label>
                     <input id="log-form-email" type="email" name="email"/>
-                    <label htmlFor="log-form-pass">Password: </label>
+                    <label htmlFor="log-form-pass">Password:</label>
                     <input id="log-form-pass" type="password" name="password"/>
                     <button type="submit"><b>Submit</b></button>
                 </form>

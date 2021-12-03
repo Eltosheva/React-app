@@ -21,15 +21,16 @@ function App() {
 
   const login = (authData) => {
     setUser(authData);
-  }
+  };
+
   const logout = () => {
     setUser(initialAuthState);
   }
 
   return (
-    <AuthContext.Provider value={user, login, logout}>
+    <AuthContext.Provider value={{user, login, logout}}>
     <div>
-     <Header email={ user.email } />
+     <Header />
      <main id="site-content">
        <Routes>
          <Route path="/home/*" element={<Home />} />

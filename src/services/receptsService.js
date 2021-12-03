@@ -16,7 +16,6 @@ export const add =  async (receptData, token) => {
         headers: {
             'content-type': 'application/json',
             'X-Authorization': 'token'
-
         },
         body: JSON.stringify(receptData)
     });

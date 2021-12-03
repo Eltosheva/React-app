@@ -1,7 +1,7 @@
-const baseURL = "'http://localhost:3030"
+const baseURL = "http://localhost:3030"
 
 export const login = async (email, password) => {
-    let res = await fetch(`${baseURL}3030/users/login`, { 
+    let res = await fetch(`${baseURL}/users/login`, { 
         method: 'POST',
         headers:  {
             'content-type': 'application/json'
@@ -25,7 +25,10 @@ export const login = async (email, password) => {
     // }
 };
 
-
-// export const logout = () => {
-//      let result = fetch(`${baseURL}3030/users/logout`
-// };
+export const logout = (token) => {
+    return fetch(`${baseURL}/users/logout`, {
+        headers: {
+            'X-Authorization': token,
+        }
+    })
+};

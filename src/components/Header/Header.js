@@ -6,8 +6,8 @@ const Header = () => {
     const { user } = useContext(AuthContext);
     let userNavigation = (
         <div id='user'>
-            <p>Welcome, {user.email} </p>
-            <li><a href='/add'>Add NEW</a></li>
+            <span>Welcome, <b>{user.email}</b> </span>
+            <li><a href='/addRecepts'>Add NEW recept</a></li>
             <li><a href='/logout'>Logout</a></li>
         </div>
     );
