@@ -7,7 +7,7 @@ const Home = () => {
         <div className="delishes">
             <section className="delish-card-sec">
                 <div className="card">
-                    <img className="card-img" src="/images/avocado.jpg" alt="Food- with-avocado"/>
+                    <img className="card-img" src="/images/avocado.jpg" alt="Food-with-avocado"/>
                     <h3>Title</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                          labore consequuntur, vel vitae debitis ipsa consequatur animi dolore ullam, 
@@ -17,7 +17,7 @@ const Home = () => {
             </section>
             <section className="delish-card-sec">
                 <div className="card">                    
-                <img className="card-img" src="/images/beer-cheese-sruffing.jpg" alt="Beer-cheese-sruffing"/>
+                <img className="card-img" src="/images/homemade-taco.jpg" alt="Homemade-taco"/>
                     <h3>Title</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                          labore consequuntur, vel vitae debitis ipsa consequatur animi dolore ullam, 
@@ -27,7 +27,7 @@ const Home = () => {
             </section>
             <section className="delish-card-sec">
                 <div className="card">                    
-                <img className="card-img" src="/images/brusels-sprouts-salad.jpg" alt="Brusels-sprouts-salad"/>
+                <img className="card-img" src="/images/seo-orzo-and-salmon.jpg" alt="Seo-orzo-and-salmon"/>
                     <h3>Title</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                          labore consequuntur, vel vitae debitis ipsa consequatur animi dolore ullam, 
@@ -47,7 +47,7 @@ const Home = () => {
             </section>
             <section className="delish-card-sec">
                 <div className="card">                    
-                <img className="card-img" src="/images/chiken-piccata.jpg" alt="Chiken-piccata"/>
+                <img className="card-img" src="/images/spaghetti-meatballs.jpg" alt="Spaghetti-meatballs"/>
                     <h3>Title</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                          labore consequuntur, vel vitae debitis ipsa consequatur animi dolore ullam, 

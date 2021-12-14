@@ -17,14 +17,14 @@ const Login = () => {
         let password = formData.get('password');
         
         authService.login(email,password)
-        .then(
-            (authData) => {
-            login(authData); 
-
-            navigate('/home');
-        })        .catch(err => {
-            // TODO: show notification
-            console.log(err);
+            .then((authData) => {
+                login(authData); 
+                //addNotification('You logged in successfully', types.success);
+                navigate('/home');
+            })        
+            .catch(err => {
+                // TODO: show notification
+                console.log(err);
         });
     }
     

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { AuthContext } from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import useLocalStorage from './hooks/useLocalStorage';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
@@ -9,6 +9,7 @@ import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
 import Register from './components/Register/Register';
 import Add from './components/Add/Add';
+import ErrorBoundary from './components/Common/ErrorBoundary';
 
 const initialAuthState = {
   _id: '',
@@ -28,24 +29,26 @@ function App() {
   }
 
   return (
-    <AuthContext.Provider value={{user, login, logout}}>
-    <div>
-     <Header />
-     <main id="site-content">
-       <Routes>
-         <Route path="/home/*" element={<Home />} />
-         <Route path="/login" element={<Login />} />
-         <Route path="/logout" element={<Logout />} />
-         <Route path="/register" element={<Register />} />
-         <Route path="/addRecepts" element={<Add />} />
-       </Routes>
-       </main>
+    <ErrorBoundary>
+      <AuthProvider value={{user, login, logout}}>
+        <div>
+          <Header />
+          <main id="site-content">
+            <Routes>
+              <Route path="/home/*" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/logout" element={<Logout />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/addRecepts" element={<Add />} />
+            </Routes>
+            </main>
 
-       <footer id="site-footer">
-           <p>@Delishes</p>
-       </footer>
-    </div>
-    </AuthContext.Provider>
+            <footer id="site-footer">
+                <p>@Delishes</p>
+            </footer>
+        </div>
+      </AuthProvider>
+    </ErrorBoundary>
   );
 }
 
