@@ -1,21 +1,21 @@
 import React from 'react';
-import { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
+import { useAuthContext } from '../../contexts/AuthContext';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user } = useAuthContext();
     let userNavigation = (
         <div id='user'>
             <span>Welcome, <b>{user.email}</b> </span>
-            <li><a href='/addRecepts'>Add NEW recept</a></li>
-            <li><a href='/logout'>Logout</a></li>
+            <li className='nav-li'><a href='/my-recepts'>My recepts</a></li>
+            <li className='nav-li'><a href='/addRecepts'>Add NEW recept</a></li>
+            <li className='nav-li'><a href='/logout'>Logout</a></li>
         </div>
     );
 
     let guestNavigation = (
             <div id='guest'>
-                <li><a href='/register'>Register</a></li>
-                <li><a href='/login'>Login</a></li>
+                <li className='nav-li'><a href='/register'>Register</a></li>
+                <li className='nav-li'><a href='/login'>Login</a></li>
             </div>
     );
 

@@ -2,7 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router'; 
 import { useContext } from 'react'; 
 import { AuthContext } from '../../contexts/AuthContext';
-import * as receptsService from '../../services/receptsService';
+import * as receptService from '../../services/receptService';
+import { types } from '../../contexts/NotificationContext';
 
 const Add = () => {
     const { user } = useContext(AuthContext);
@@ -10,21 +11,22 @@ const Add = () => {
 
     const onReceptAdd = (e) => {
         e.preventDefault();
-
         let formData = new FormData(e.currentTarget);
 
-        let name = formData.get('name');
-        let description = formData.get('description');
-        let imageUrl = formData.get('imageUrl');
+        let name = formData.get('title');
         let type = formData.get('type');
+        let ingredients = formData.get('ingredients');
+        let description = formData.get('description');
+        let imageUrl = formData.get('imageUrl');;
 
         let data = {
             name,
-            description,
-            imageUrl,
             type,
+            ingredients,
+            description,
+            imageUrl
         };
-        receptsService.add(data, user.accessToken)
+        receptService.add(data, user.accessToken)
             .then(result => {
                 navigate('/home');
             })
@@ -39,7 +41,7 @@ const Add = () => {
                     <p className="field">
                         <label htmlFor="title">Title</label>
                         <span className="input">
-                            <input type="text" name="add" id="add" placeholder="Title" />
+                            <input type="text" name="title" id="title" placeholder="Title" />
                         </span>
                     </p>
                     <p className="field">
@@ -61,7 +63,7 @@ const Add = () => {
                     </p>
                     <p className="field">
                         <label htmlFor="description">Description</label>
-                        <span className="input">2
+                        <span className="input">
                             <textarea name="description" id="description" cols="45" rows="5" placeholder="Description"></textarea>
                         </span>
                     </p>

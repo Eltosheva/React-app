@@ -2,8 +2,8 @@ body {
     color: bisque;
     box-sizing: border-box;
     background-size: cover;
+    background-repeat: no-repeat;
     background-image: url("https://cdn.wallpapersafari.com/9/4/mQSACk.jpg");
-    /* https://i.pinimg.com/736x/89/72/0c/89720c5adc25a7a0df7cc6d961181972.jpg */
 }
 
 header {
@@ -13,7 +13,7 @@ header {
     align-items: center;
 }
 
-.home {
+.home, .my-recepts {
     padding: 0;
     margin: 0 0 18px 23px;
     font-size: 46px;
@@ -62,8 +62,8 @@ span {
     box-shadow: 6px 3px 13px 10px;
 }
 
-.navigation li:hover, .home:hover , a:hover{
-    color: rgb(41, 28, 12);
+.navigation li:hover, a:hover{
+    color: rgb(31, 22, 11);
     background-color: bisque;
 }
 
@@ -77,7 +77,7 @@ span {
     opacity: 0.9;
 }
 
-.reg-form, .log-form, .add-form {
+.reg-form, .log-form, .add-form, .edit-form {
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -92,6 +92,17 @@ label {
     font-weight: bolder;
     color: rgb(41, 28, 12);
     margin: 20px;
+}
+
+.owner, button{
+    background-color: #940606;
+    font-size: 16px;
+    color: white;
+    padding: 5px 25px;
+    margin: auto 10px auto 0px;
+    border: none;
+    border-radius: 4px;
+    width: 50%;
 }
 
 button {
@@ -109,7 +120,7 @@ button:hover {
     background-color: #e45252;
 }
 
-.add-sec h1 {
+.add-sec h1 , .edit-sec h1{
     text-align: center;
     font-style: italic;
     color: rgb(41, 28, 12);
@@ -129,16 +140,32 @@ button:hover {
 
 }
 
-/*.card {
-    font-style: italic;
-    text-align: center;
-    color: bisque;
+.details-container{
+    box-sizing: border-box;
+    display: flex;
+    font-size: 24px;
+    margin: auto;
+    transform: translate(41px, 50px);
+    max-width: 90vw;
+    padding-bottom: 50px;
 }
 
-.card-img {
+.details-container img {
+    max-width: 50vw;
+}
+
+.other-recepts-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.otherRecept img {
     max-width: 350px;
-    border-radius: 3px;
-} */
+    border-radius: 3px; 
+}
+.otherRecept {
+    border-bottom: solid 2px rgb(53, 24, 3);
+} 
 
 .delishes {
     display: grid;
@@ -146,15 +173,26 @@ button:hover {
     grid-gap: 100px;
 }
 
-.card {
-    display: grid;
-    grid-template-rows: max-content 80px 1fr;
+.otherRecept {
+    list-style: none;
 }
 
-.card img {
-    object-fit:cover;
-    width: 100%;
-    height: 100%;
+.userBut-comment {
+    margin-top: 25px;
+    border-radius: 4px;
+    background-color: bisque;
+}
+
+.user{
+    margin: 0;
+}
+
+.page-footer{  
+    display: flex;
+}
+
+.page-footer p {
+    margin: auto;
 }
 
 @media all and (max-width: 1200px) {
