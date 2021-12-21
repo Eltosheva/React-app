@@ -42,6 +42,7 @@ a {
 }
 
 input {
+    margin:auto;
     width: 350px;
     height: 27px;
 }
@@ -68,7 +69,7 @@ span {
 
 .login, .register, .add{
     border-radius: 5px;
-    padding: 20px;
+    padding: 15px 28px 13px 15px;
     margin: 100px auto;
     max-width: 40vw;
     z-index: 1;
@@ -98,17 +99,17 @@ label {
     font-size: 16px;
     color: white;
     padding: 5px 25px;
-    margin: auto 10px auto 0px;
+    margin: auto 50px auto 0px;
     border: none;
     border-radius: 4px;
     width: 50%;
 }
 
-button {
+button, .submit{
     background-color: #ec1010;
     font-size: 16px;
     color: white;
-    padding: 12px 30px;
+    padding: 7px 23px 23px 22px;
     margin: 25px auto 15px auto;
     border: none;
     border-radius: 4px;
@@ -155,6 +156,7 @@ button:hover {
 
 .hearts {
     max-width: 25px;
+    padding: 13px 13px 0px 13px;
 }
 
 .other-recepts-list {
@@ -186,6 +188,25 @@ button:hover {
     background-color: bisque;
 }
 
+/* .comments {
+    padding: 25px 10px 15px 50px;
+} */
+
+.total-comments {
+    display: flex;
+}
+
+.user-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-buttons a{
+    border-radius: 4px;
+    padding: 12px;
+    max-width: 115px;
+}
+
 .user{
     margin: 0;
 }
@@ -210,6 +231,10 @@ button:hover {
         box-shadow: 6px 3px 13px 10px;
     }
 
+    .navigation a {
+        font-size: 16px;
+    }
+
     header h2 {
         padding: 0;
         margin: 0 0 10px 13px;
@@ -229,6 +254,10 @@ button:hover {
         padding: 2px 9px;
         border-radius: 5px;
         box-shadow: 6px 3px 13px 10px;
+    }
+
+    .navigation a {
+        font-size: 10px;
     }
 
     header h2 {
@@ -251,7 +280,6 @@ button:hover {
 
 @media all and (max-width: 960px) {
     .input{
-        
         width: 20vw; 
     }
 }

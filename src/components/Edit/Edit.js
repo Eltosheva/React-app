@@ -72,7 +72,6 @@ const Edit = () => {
             <section className="edit-sec">
                 <h1>DeliSH</h1>
                 <form className="edit-form" method='POST' onSubmit={receptEditHendler}>
-                <legend>Edit recept</legend>
                     <p className="field">
                         <label htmlFor="title">Title</label>
                         <span className="input" >
