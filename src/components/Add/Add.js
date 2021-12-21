@@ -13,14 +13,14 @@ const Add = () => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
 
-        let name = formData.get('title');
+        let title = formData.get('title');
         let type = formData.get('type');
         let ingredients = formData.get('ingredients');
         let description = formData.get('description');
-        let imageUrl = formData.get('imageUrl');;
+        let imageUrl = formData.get('imageUrl');
 
         let data = {
-            name,
+            title,
             type,
             ingredients,
             description,
@@ -73,17 +73,8 @@ const Add = () => {
                             <input type="text" name="imageUrl" id="image" placeholder="ImageURL" />
                         </span>
                     </p>
-                    <button className="button submit" type="submit" value="Add Recept"><b>ADD</b></button>
-
-                    {/* <label htmlFor="title">Title</label>
-                    <input type="text" name="add" id="add"/>
-                    <label htmlFor="img">Image URL</label>
-                    <input type="url" name="img" id= "img"/>
-                    <label htmlFor="ingredients">INGREDIENTS</label>
-                    <textarea name="products" id="ingredients" cols="30" rows="30"></textarea>
-                    <label htmlFor="text">DIRECTIONS</label>
-                    <textarea name="text" id="text" cols="50" rows="30"></textarea>
-                    <button type="add"><b>ADD</b></button> */}
+                    <input className="button submit" type="submit" value="Add Recept" />
+                    {/* <button className="button submit" type="submit" value="Add Recept"><b>ADD</b></button> */}
                 </form>
             </section>
         </div>

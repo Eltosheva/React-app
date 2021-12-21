@@ -1,9 +1,8 @@
 body {
-    color: bisque;
+    color: rgb(51, 36, 18);
     box-sizing: border-box;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("https://cdn.wallpapersafari.com/9/4/mQSACk.jpg");
+    background-image:linear-gradient(rgba(255, 222, 192, 0.35), rgba(255, 222, 192, 0.35)), url("https://cdn.wallpapersafari.com/9/4/mQSACk.jpg");
 }
 
 header {
@@ -150,8 +149,12 @@ button:hover {
     padding-bottom: 50px;
 }
 
-.details-container img {
+.details-container .img {
     max-width: 50vw;
+}
+
+.hearts {
+    max-width: 25px;
 }
 
 .other-recepts-list {
@@ -193,6 +196,8 @@ button:hover {
 
 .page-footer p {
     margin: auto;
+    font-style: italic;
+    font-weight: bolder;
 }
 
 @media all and (max-width: 1200px) {
