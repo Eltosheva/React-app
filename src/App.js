@@ -14,9 +14,7 @@ import Details from './components/Details/Details';
 import Edit from './components/Edit/Edit';
 import GuardedRoute from './components/Common/GuardedRoute';
 import PrivateRoute from './components/Common/PrivateRoute';
-// import ErrorBoundary from './components/Common/ErrorBoundary';
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import ErrorBoundary from './components/Common/ErrorBoundary';
 
 const initialAuthState = {
   _id: '',
@@ -36,7 +34,7 @@ function App() {
   }
 
   return (
-    // <ErrorBoundary>
+     <ErrorBoundary>
       <AuthProvider value={{user, login, logout}}>
         <div className='theDiv'>
           <Header />
@@ -61,7 +59,7 @@ function App() {
             </footer>
         </div>
       </AuthProvider>
-    // </ErrorBoundary>
+    </ErrorBoundary>
   );
 }
 

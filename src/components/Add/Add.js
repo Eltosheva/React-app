@@ -37,7 +37,6 @@ const Add = () => {
             <section className="add-sec">
                 <h1>ADD NEW DeliSH</h1>
                 <form className="add-form" onSubmit={onReceptAdd} method="POST">
-                <legend>Add new recept</legend>
                     <p className="field">
                         <label htmlFor="title">Title</label>
                         <span className="input">

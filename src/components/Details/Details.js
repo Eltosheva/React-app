@@ -4,25 +4,14 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import * as receptService from '../../services/receptService';
 import * as likeService from '../../services/likeService';
-import * as commentService from '../../services/commentService';
 import { useAuthContext } from '../../contexts/AuthContext';
-import useLocalStorage from '../../hooks/useLocalStorage';
-import useReceptState from '../../hooks/useReceptState';
 import { useNotificationContext, types } from '../../contexts/NotificationContext';
-
-import Edit from '../Edit/Edit';
-
-//import ConfirmDialog from '../Common/ConfirmDialog';
-//import { Button } from 'react-bootstrap';
-
 
 const Details = () => {
     const navigate = useNavigate();
     const { user } = useAuthContext();
     const addNotification = useNotificationContext();
-    //const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const { receptId } = useParams();
-    // const { recept, setRecept } = useReceptState(receptId);
     const [recept, setRecept] = useState({});
     const controller = useMemo(() => {
 
@@ -44,13 +33,6 @@ const Details = () => {
             })
     }, []);
 
-    useEffect(() => {
-        commentService.getReceptComments(receptId)
-            .then(comments => {
-                setRecept(state => ({...state, comments}))
-            })
-    }, []);
-
     const deleteHandler = (e) => {
         e.preventDefault();
 
@@ -59,26 +41,21 @@ const Details = () => {
                 navigate('/home');
             })
     };
-    
-    const commentButtonClick = () => {
-        setRecept(state => ({...state, comments: [...state.comments, user._id]}));
-    };
 
     const likeButtonClick = () => {
         if (user._id === recept._ownerId) {
             return;
         }
 
-        // if (recept.likes.includes(user._id)) {
-        //     addNotification('You cannot like again!');
-        //     return;
-        // }
+        if (recept.likes?.includes(user._id)) {
+            alert('You cannot like again!');
+            return;
+        }
 
         likeService.like(user._id, receptId)
             .then(() => {
                 setRecept(state => ({...state, likes: [...state.likes, user._id]}));
-
-                // addNotification('Successfuly liked!', types.success);
+                alert('Successfuly liked!', types.success);
             })
     };
 
@@ -99,8 +76,8 @@ const Details = () => {
         <div className='details-container'>
             <section id="details-page" className="details">
                 <div className="recept-information">
-                    <h3 className='title'>Name: {recept.title}</h3>
-                    <p className="type">Type: {recept.type}</p>
+                    <h1 className='title'>Name: {recept.title}</h1>
+                    <h3 className="type">Type: {recept.type}</h3>
                     <p className="img"><img src={recept.imageUrl} /></p>
                     <div className="recept-ingredients">
                     <h3>Ingredients</h3>
@@ -114,17 +91,11 @@ const Details = () => {
                         {user._id && (user._id == recept._ownerId
                             ? ownerButtons
                             : userButtons
-                        )}
-                        
+                        )}        
                         <div className="likes">
                             <img className="hearts" src="/images/heart.png" />
                             <span id="total-likes"><b>Likes: {recept.likes?.length || 0}</b></span>
                         </div>
-                        <div className="comments">  
-                            <textarea className='userBut-comment' cols="70" rows="10" placeholder='write your coment here...'></textarea>
-                            <p><a className='comment button' hred="#" onClick={commentButtonClick}>Share Comment</a></p>
-                            <span id="total-comments"><b>Comments: {recept.comments}</b></span>
-                        </div>  
                     </div>
                 </div>
             </section>

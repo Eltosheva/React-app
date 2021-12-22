@@ -5,8 +5,6 @@ import { useParams } from 'react-router-dom';
 
 import * as receptService from '../../services/receptService';
 
-// import { Alert } from 'react-bootstrap';
-
 const types = [
     { value: 'deserts', text: 'Deserts' },
     { value: 'main-dishes', text: 'Main Dishes' },
@@ -18,8 +16,6 @@ const Edit = () => {
     const { receptId } = useParams();
     const navigate = useNavigate();
     const [recept, setRecept] = useState({});
-    //const [errors, setErrors] = useState({name: false})
-
     
     const controller = useMemo(() => {
         const controller = new AbortController()
@@ -46,26 +42,6 @@ const Edit = () => {
         receptService.update(receptId, receptData);
         navigate (`/details/${receptId}`);
     }
-
-    // const titleChangeHandler = (e) => {
-    //     let currentTitle = e.target.value;
-    //     if (currentTitle.length < 3) {
-    //         setErrors(state => ({...state, title: 'Your title sould be at least 3 characters!'}))
-    //     } else if (currentTitle.length > 20) {
-    //         setErrors(state => ({...state, title: 'Your title sould be max 20 characters!'}))
-    //     } else {
-    //         setErrors(state => ({...state, title: false}))
-    //     }
-    // };
-
-    // const ingrChangeHandler = (e) => {
-    //     let currentIngre = e.target.value;
-    //     if(currentIngre.length < 5) {
-    //         setErrors(state => ({...state, ingredients: 'You must have minimum 1 ingredient!'}))
-    //     } else {
-    //         setErrors(state => ({...state, ingredients: false}))
-    //     }
-    // };
     
     return(
         <div className="edit">
@@ -75,10 +51,8 @@ const Edit = () => {
                     <p className="field">
                         <label htmlFor="title">Title</label>
                         <span className="input" >
-                            {/* style={{borderColor: errors.title ? 'red' : 'inherit'}} */}
-                            <input type="text" name="title" id="title" defaultValue={recept.title} /> 
+                            <input type="text" name="title" id="title" value={recept.title} /> 
                         </span>
-                        {/* <Alert variant="danger" show={errors.title}>{errors.title}</Alert> */}
                     </p>
                     <p className="field">
                         <label htmlFor="type">Type</label>
@@ -91,7 +65,6 @@ const Edit = () => {
                     </p>
                     <p className="field">
                         <label htmlFor="ingredients">Ingredients</label>
-                        {/* style={{borderColor: errors.ingredients ? 'red' : 'inherit'}} */}
                         <span className="input" >
                             <textarea name="ingredients" id="ingredients" cols="45" rows="5" value={recept.ingredients}></textarea>
                         </span>
@@ -105,7 +78,7 @@ const Edit = () => {
                     <p className="field">
                         <label htmlFor="image">Image</label>
                         <span className="input">
-                            <input type="text" name="imageUrl" id="image" defaultValue={recept.imageUrl} />
+                            <input type="text" name="imageUrl" id="image" value={recept.imageUrl} />
                         </span>
                     </p>
                     <input className="button submit" type="submit" value="Edit Recept" />

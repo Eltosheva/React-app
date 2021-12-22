@@ -1,3 +1,5 @@
+
+
 body {
     color: rgb(51, 36, 18);
     box-sizing: border-box;
@@ -182,20 +184,6 @@ button:hover {
     list-style: none;
 }
 
-.userBut-comment {
-    margin-top: 25px;
-    border-radius: 4px;
-    background-color: bisque;
-}
-
-/* .comments {
-    padding: 25px 10px 15px 50px;
-} */
-
-.total-comments {
-    display: flex;
-}
-
 .user-buttons {
     display: flex;
     flex-direction: column;
@@ -203,8 +191,8 @@ button:hover {
 
 .user-buttons a{
     border-radius: 4px;
-    padding: 12px;
-    max-width: 115px;
+    padding: 6px;
+    max-width: 47px
 }
 
 .user{
