@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# DeliShesss #
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Страница за кулинария # 
 
-## Available Scripts
+1. [Увод](#1-увод)
+2. [Концепция на страницата](#2-концепция-на-страницата)
+3. [Предимства и недостатъци:](#3-предимства-и-недостатъци)
+   * [Предимства](#предимства)
+   * [Недостатъци](#недостатъци)
+4. [Инструменти за разработка и управнелние](#4-инструменти-за-разработка-и-управнелние)
+   * [Примери](#примери)
 
-In the project directory, you can run:
 
-### `npm start`
+# 1. Увод #
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*`DeliSHesss`* е страница за споделяне на рецепти, кулинарни техники и всичко провокиращо вкусовите ни рецептори. Страницата е подходяща за всеки, който иска да обогати кулинарните си знания или да сподели такива с аудитория.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# 2. Концепция на страницата #
 
-### `npm test`
+## Идеята на страницата е да може да бъде свободно ползвана, без да е нужно да е присъдиняваш като потребител, но и да има тази възможност. ## 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Какво е DeliShesss? ####
 
-### `npm run build`
+DeliShesss е специално по повод необходмостта на всички хора, с еднакви интереси в сферата на кулинарията, да имат своето място където да споделят рецепти, да си дават съвети и идеи за тяхното подобряване. Също така да получат обратна връзка за начина на приготвяне от други потребители на сайта. 
+Всеки посетител на сайта има възможност да почерпи идеи, опит и знание от публикуваните рецепти. Не се изисква регистрация за хората, който искат само да почетат за любимите си ястия. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 3. Предимства и недостатъци #
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Предимства ##
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Какви са предимствата на DeliShesss? ###
 
-### `npm run eject`
+* Протребителите имат възможността качвайки своите рецепти, да ги съхраняват в картотека, което му дава удобството да ги намират и редактират при нужда.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Тези, които са качили собствена рецепта, могат да следят колко харесвана е тя сред аудиторията.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Всеки може да споделя своя прочит на любимите си вкусотии.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Недостатъци ##
 
-## Learn More
+#### Какви са Недостатъци на DeliShesss? ###
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* За да имаш нещо от публикуваните вкусотии, ще трябва да се потрудиш и отделиш време за постигането му.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Може да се загуби спортна или каквато и да е форма.
 
-### Code Splitting
+* Насърчава чревоугодничеството.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+# Използвани технологии #
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* React [Create React App](https://github.com/facebook/create-react-app).
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Server Practice [softuni-practice-server](https://github.com/softuni-practice-server/softuni-practice-server).
